@@ -2,7 +2,7 @@ import { Datagrid, List, TextField } from 'react-admin';
 
 export const ComputerList = () => (
     <List>
-        <Datagrid rowClick="edit">
+        <Datagrid rowClick="show">
             <TextField source="serialNumber" />
             <TextField source="processor" />
             <TextField source="ram" />
