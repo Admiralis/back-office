@@ -6,7 +6,7 @@ import {CourseEdit} from "./courses/CourseEdit";
 import {CourseShow} from "./courses/CourseShow";
 import {ComputerList} from "./computers/ComputerList";
 import {ComputerEdit} from "./computers/ComputerEdit";
-import {ComputerShow} from "./computers/ComputerDetail";
+import {ComputerShow} from "./computers/ComputerShow";
 
 export const App = () => (
     <Admin
