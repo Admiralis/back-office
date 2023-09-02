@@ -1,14 +1,24 @@
-import { Show, SimpleShowLayout, TextField } from 'react-admin';
+import {ArrayField, Show, SimpleShowLayout, TextField, useRecordContext, useShowContext} from 'react-admin';
+import React from "react";
 
-export const ComputerShow = () => (
-    <Show>
-        <SimpleShowLayout>
-            <TextField source="serialNumber" />
-            <TextField source="processor" />
-            <TextField source="ram" />
-            <TextField source="condition" />
-            <TextField source="computerStatus" />
-            <TextField source="comments" />
-        </SimpleShowLayout>
-    </Show>
-);
+export const ComputerShow = () => {
+
+    const { record, isLoading } = useShowContext();
+
+    if (!isLoading) {console.log(record)}
+
+    return (
+        <Show>
+            <SimpleShowLayout>
+                <TextField source="serialNumber" label="SN"/>
+                <TextField source="processor" label="Processeur"/>
+                <TextField source="ram" label="RAM"/>
+                <TextField source="condition" label="Etat"/>
+                <TextField source="computerStatus" label="Statut"/>
+                <ArrayField source="comments" label="Commentaires">
+                    <TextField source="content"/>
+                </ArrayField>
+            </SimpleShowLayout>
+        </Show>
+    )
+};
